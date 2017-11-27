@@ -23,7 +23,7 @@ namespace RacingGame
             LoadData();
             Transparent();
             ResetGhosts();
-            Cash();
+            
         }
 
 
@@ -77,9 +77,8 @@ namespace RacingGame
             PB4.Parent = pbBackground;
 
             PB4.BackColor = Color.Transparent;
-
-
         }
+
 
         private void allBetters_CheckedChanged(object sender, EventArgs e)
         {
@@ -104,104 +103,7 @@ namespace RacingGame
 
         }
 
-        //private void RaceHorse_Click(object sender, EventArgs e)
-        //{
-        //    myRace.TrackLength = Form1.ActiveForm.Width - PB1.Width;
-
-
-        //    while (PB1.Location.X < myRace.TrackLength && PB2.Location.X < myRace.TrackLength &&
-        //           PB3.Location.X < myRace.TrackLength && PB4.Location.X < myRace.TrackLength)
-
-        //    {
-
-        //        PB1.Location = new Point(PB1.Location.X + Factory.Number(), PB1.Location.Y);
-
-        //        PB2.Location = new Point(PB2.Location.X + Factory.Number(), PB2.Location.Y);
-
-        //        PB3.Location = new Point(PB3.Location.X + Factory.Number(), PB3.Location.Y);
-
-        //        PB4.Location = new Point(PB4.Location.X + Factory.Number(), PB4.Location.Y);
-
-        //        Application.DoEvents();
-
-
-
-        //    }
-
-        //    if (PB1.Location.X >= myRace.TrackLength)
-        //    {
-        //        MessageBox.Show("The Winner is " + myThing[0].thingName);
-        //        myRace.Winner = 1;
-
-
-        //    }
-        //    else if (PB2.Location.X >= myRace.TrackLength)
-        //    {
-        //        MessageBox.Show("The Winner is " + myThing[1].thingName);
-        //        myRace.Winner = 2;
-
-        //    }
-        //    else if (PB3.Location.X >= myRace.TrackLength)
-        //    {
-        //        MessageBox.Show("The Winner is " + myThing[2].thingName);
-        //        myRace.Winner = 3;
-        //    }
-        //    else
-        //    {
-        //        MessageBox.Show("The Winner is " + myThing[3].thingName);
-        //        myRace.Winner = 4;
-        //    }
-
-        //    if (myRace.JoeThing == myRace.Winner)
-        //    {
-        //        lblBetStatus1.Text = "Joe Wins";
-        //    }
-        //    else
-        //    {
-        //        lblBetStatus1.Text = "Joe Loses";
-        //    }
-        //    if (myRace.AlThing == myRace.Winner)
-        //    {
-        //        lblBetStatus2.Text = "Al Wins";
-        //    }
-        //    else
-        //    {
-        //        lblBetStatus2.Text = "Al Loses";
-        //    }
-        //    if (myRace.BobThing == myRace.Winner)
-        //    {
-        //        lblBetStatus3.Text = "Bob Wins";
-        //    }
-        //    else
-        //    {
-        //        lblBetStatus3.Text = "Bob Loses";
-        //    }
-
-        //    ResetGhosts();
-
-            //if (myRace.JoeBet == true && myRace.AlBet == true && myRace.BobBet == true)
-            //{
-
-
-
-            //}
-            //else
-            //{
-            //    MessageBox.Show("Nope");
-            //}
-
-
-        //    //generate random number
-        //    Random rnd = new Random();
-        //    int number = rnd.Next(0, 4);
-        //    string numberString = number.ToString();
-
-        //    list1.Items.Add(myThing[number].ToString());
-
-
-
-
-        //}
+      
 
         private void btnBet_Click(object sender, EventArgs e)
         {
@@ -251,7 +153,6 @@ namespace RacingGame
         {
             if (myRace.JoeBet == true && myRace.AlBet == true && myRace.BobBet == true)
             {
-
                 myRace.TrackLength = Form1.ActiveForm.Width - PB1.Width;
 
 
@@ -259,20 +160,14 @@ namespace RacingGame
                        PB3.Location.X < myRace.TrackLength && PB4.Location.X < myRace.TrackLength)
 
                 {
-
                     PB1.Location = new Point(PB1.Location.X + Factory.Number(), PB1.Location.Y);
-
                     PB2.Location = new Point(PB2.Location.X + Factory.Number(), PB2.Location.Y);
-
                     PB3.Location = new Point(PB3.Location.X + Factory.Number(), PB3.Location.Y);
-
                     PB4.Location = new Point(PB4.Location.X + Factory.Number(), PB4.Location.Y);
-
                     Application.DoEvents();
 
 
-
-                }
+                    }
                 if (PB1.Location.X >= myRace.TrackLength)
                 {
                     MessageBox.Show("The Winner is " + myThing[0].thingName);
@@ -334,15 +229,14 @@ namespace RacingGame
                 myPunter[0].cash = myRace.JoeCash;
                 myPunter[1].cash = myRace.AlCash;
                 myPunter[2].cash = myRace.BobCash;
+                ResetAll();
 
-
-
-                Cash();
-                ResetGhosts();
-
-
-
-
+                if (myRace.BobCash <= 0 && myRace.AlCash <= 0 && myRace.JoeCash <= 0)
+                {
+                    MessageBox.Show("Everyone is broke. Go Home!");
+                    btnBet.Enabled = false;
+                    myRace.JoeBet = false;
+                }
             }
             else
             {
@@ -350,13 +244,7 @@ namespace RacingGame
             }
         }
 
-        private void Cash()
-        {
-            txtAl.Text = myRace.AlCash.ToString();
-            txtBob.Text = myRace.BobCash.ToString();
-            txtJoe.Text = myRace.JoeCash.ToString();
-
-        }
+       
 
 
         public void ResetGhosts()
@@ -367,6 +255,54 @@ namespace RacingGame
             PB4.Location = new Point(50, 200);
 
         }
+
+        public void ResetAll()
+        {
+
+            ResetGhosts();
+           
+            if (myRace.JoeCash <= 0)
+            {
+                joeButton.Enabled = false;
+                myRace.JoeBet = true;
+                lblBetStatus1.Text = "Busted";
+                myRace.BobAmount = 0;
+            }
+            else
+            {
+                myRace.JoeBet = false;
+            }
+            if (myRace.AlCash <= 0)
+            {
+                alButton.Enabled = false;
+                myRace.AlBet = true;
+              
+                lblBetStatus2.Text = "Busted";
+                myRace.AlAmount = 0;
+            }
+            else
+            {
+                myRace.AlBet = false;
+            }
+            if (myRace.BobCash <= 0)
+            {
+                bobButton.Enabled = false;
+                myRace.BobBet = true;
+                lblBetStatus3.Text = "Busted";
+                myRace.JoeAmount = 0;
+            }
+            else
+            {
+                myRace.BobBet = false;
+            }
+
+            joeButton.Checked = false;
+            alButton.Checked = false;
+            bobButton.Checked = false;
+
+        }
+
+       
     }
 
 }

@@ -30,14 +30,12 @@
         {
             this.Better = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
+            this.joeButton = new System.Windows.Forms.RadioButton();
+            this.alButton = new System.Windows.Forms.RadioButton();
+            this.bobButton = new System.Windows.Forms.RadioButton();
             this.txtMaxBet = new System.Windows.Forms.Label();
             this.numBetAmount = new System.Windows.Forms.NumericUpDown();
             this.numThingNumber = new System.Windows.Forms.NumericUpDown();
-            this.button1 = new System.Windows.Forms.Button();
-            this.list1 = new System.Windows.Forms.ListBox();
             this.btnBet = new System.Windows.Forms.Button();
             this.lblBetStatus1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -49,9 +47,6 @@
             this.PB1 = new System.Windows.Forms.PictureBox();
             this.pbBackground = new System.Windows.Forms.PictureBox();
             this.button2 = new System.Windows.Forms.Button();
-            this.txtJoe = new System.Windows.Forms.Label();
-            this.txtAl = new System.Windows.Forms.Label();
-            this.txtBob = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.numBetAmount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numThingNumber)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PB4)).BeginInit();
@@ -75,48 +70,48 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(185, 348);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(83, 13);
+            this.label2.Size = new System.Drawing.Size(48, 13);
             this.label2.TabIndex = 1;
-            this.label2.Text = "on thing number";
+            this.label2.Text = "on ghost";
             // 
-            // radioButton1
+            // joeButton
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(32, 308);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(42, 17);
-            this.radioButton1.TabIndex = 2;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Tag = "0";
-            this.radioButton1.Text = "Joe";
-            this.radioButton1.UseVisualStyleBackColor = true;
-            this.radioButton1.CheckedChanged += new System.EventHandler(this.allBetters_CheckedChanged);
+            this.joeButton.AutoSize = true;
+            this.joeButton.Location = new System.Drawing.Point(32, 308);
+            this.joeButton.Name = "joeButton";
+            this.joeButton.Size = new System.Drawing.Size(42, 17);
+            this.joeButton.TabIndex = 2;
+            this.joeButton.TabStop = true;
+            this.joeButton.Tag = "0";
+            this.joeButton.Text = "Joe";
+            this.joeButton.UseVisualStyleBackColor = true;
+            this.joeButton.CheckedChanged += new System.EventHandler(this.allBetters_CheckedChanged);
             // 
-            // radioButton2
+            // alButton
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(32, 330);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(34, 17);
-            this.radioButton2.TabIndex = 3;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Tag = "1";
-            this.radioButton2.Text = "Al";
-            this.radioButton2.UseVisualStyleBackColor = true;
-            this.radioButton2.CheckedChanged += new System.EventHandler(this.allBetters_CheckedChanged);
+            this.alButton.AutoSize = true;
+            this.alButton.Location = new System.Drawing.Point(32, 330);
+            this.alButton.Name = "alButton";
+            this.alButton.Size = new System.Drawing.Size(34, 17);
+            this.alButton.TabIndex = 3;
+            this.alButton.TabStop = true;
+            this.alButton.Tag = "1";
+            this.alButton.Text = "Al";
+            this.alButton.UseVisualStyleBackColor = true;
+            this.alButton.CheckedChanged += new System.EventHandler(this.allBetters_CheckedChanged);
             // 
-            // radioButton3
+            // bobButton
             // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(32, 354);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(44, 17);
-            this.radioButton3.TabIndex = 4;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.Tag = "2";
-            this.radioButton3.Text = "Bob";
-            this.radioButton3.UseVisualStyleBackColor = true;
-            this.radioButton3.CheckedChanged += new System.EventHandler(this.allBetters_CheckedChanged);
+            this.bobButton.AutoSize = true;
+            this.bobButton.Location = new System.Drawing.Point(32, 354);
+            this.bobButton.Name = "bobButton";
+            this.bobButton.Size = new System.Drawing.Size(44, 17);
+            this.bobButton.TabIndex = 4;
+            this.bobButton.TabStop = true;
+            this.bobButton.Tag = "2";
+            this.bobButton.Text = "Bob";
+            this.bobButton.UseVisualStyleBackColor = true;
+            this.bobButton.CheckedChanged += new System.EventHandler(this.allBetters_CheckedChanged);
             // 
             // txtMaxBet
             // 
@@ -146,24 +141,6 @@
             this.numThingNumber.Size = new System.Drawing.Size(120, 20);
             this.numThingNumber.TabIndex = 7;
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(598, 369);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "Race";
-            this.button1.UseVisualStyleBackColor = true;
-            //this.button1.Click += new System.EventHandler(this.RaceHorse_Click);
-            // 
-            // list1
-            // 
-            this.list1.FormattingEnabled = true;
-            this.list1.Location = new System.Drawing.Point(706, 297);
-            this.list1.Name = "list1";
-            this.list1.Size = new System.Drawing.Size(184, 95);
-            this.list1.TabIndex = 9;
-            // 
             // btnBet
             // 
             this.btnBet.Location = new System.Drawing.Point(446, 369);
@@ -177,7 +154,7 @@
             // lblBetStatus1
             // 
             this.lblBetStatus1.AutoSize = true;
-            this.lblBetStatus1.Location = new System.Drawing.Point(440, 314);
+            this.lblBetStatus1.Location = new System.Drawing.Point(477, 297);
             this.lblBetStatus1.Name = "lblBetStatus1";
             this.lblBetStatus1.Size = new System.Drawing.Size(80, 13);
             this.lblBetStatus1.TabIndex = 11;
@@ -194,7 +171,7 @@
             // lblBetStatus2
             // 
             this.lblBetStatus2.AutoSize = true;
-            this.lblBetStatus2.Location = new System.Drawing.Point(443, 331);
+            this.lblBetStatus2.Location = new System.Drawing.Point(477, 321);
             this.lblBetStatus2.Name = "lblBetStatus2";
             this.lblBetStatus2.Size = new System.Drawing.Size(72, 13);
             this.lblBetStatus2.TabIndex = 13;
@@ -203,7 +180,7 @@
             // lblBetStatus3
             // 
             this.lblBetStatus3.AutoSize = true;
-            this.lblBetStatus3.Location = new System.Drawing.Point(443, 348);
+            this.lblBetStatus3.Location = new System.Drawing.Point(477, 340);
             this.lblBetStatus3.Name = "lblBetStatus3";
             this.lblBetStatus3.Size = new System.Drawing.Size(82, 13);
             this.lblBetStatus3.TabIndex = 14;
@@ -261,49 +238,19 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(612, 324);
+            this.button2.Location = new System.Drawing.Point(574, 369);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 22;
-            this.button2.Text = "button2";
+            this.button2.Text = "Race";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // txtJoe
-            // 
-            this.txtJoe.AutoSize = true;
-            this.txtJoe.Location = new System.Drawing.Point(548, 312);
-            this.txtJoe.Name = "txtJoe";
-            this.txtJoe.Size = new System.Drawing.Size(35, 13);
-            this.txtJoe.TabIndex = 23;
-            this.txtJoe.Text = "label1";
-            // 
-            // txtAl
-            // 
-            this.txtAl.AutoSize = true;
-            this.txtAl.Location = new System.Drawing.Point(551, 324);
-            this.txtAl.Name = "txtAl";
-            this.txtAl.Size = new System.Drawing.Size(35, 13);
-            this.txtAl.TabIndex = 24;
-            this.txtAl.Text = "label4";
-            // 
-            // txtBob
-            // 
-            this.txtBob.AutoSize = true;
-            this.txtBob.Location = new System.Drawing.Point(554, 347);
-            this.txtBob.Name = "txtBob";
-            this.txtBob.Size = new System.Drawing.Size(35, 13);
-            this.txtBob.TabIndex = 25;
-            this.txtBob.Text = "label5";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(935, 404);
-            this.Controls.Add(this.txtBob);
-            this.Controls.Add(this.txtAl);
-            this.Controls.Add(this.txtJoe);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.PB4);
             this.Controls.Add(this.PB3);
@@ -314,14 +261,12 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.lblBetStatus1);
             this.Controls.Add(this.btnBet);
-            this.Controls.Add(this.list1);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.numThingNumber);
             this.Controls.Add(this.numBetAmount);
             this.Controls.Add(this.txtMaxBet);
-            this.Controls.Add(this.radioButton3);
-            this.Controls.Add(this.radioButton2);
-            this.Controls.Add(this.radioButton1);
+            this.Controls.Add(this.bobButton);
+            this.Controls.Add(this.alButton);
+            this.Controls.Add(this.joeButton);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.Better);
             this.Controls.Add(this.pbBackground);
@@ -343,14 +288,12 @@
 
         private System.Windows.Forms.Label Better;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton3;
+        private System.Windows.Forms.RadioButton joeButton;
+        private System.Windows.Forms.RadioButton alButton;
+        private System.Windows.Forms.RadioButton bobButton;
         private System.Windows.Forms.Label txtMaxBet;
         private System.Windows.Forms.NumericUpDown numBetAmount;
         private System.Windows.Forms.NumericUpDown numThingNumber;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.ListBox list1;
         private System.Windows.Forms.Button btnBet;
         private System.Windows.Forms.Label lblBetStatus1;
         private System.Windows.Forms.Label label3;
@@ -362,9 +305,6 @@
         private System.Windows.Forms.PictureBox PB4;
         private System.Windows.Forms.PictureBox pbBackground;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Label txtJoe;
-        private System.Windows.Forms.Label txtAl;
-        private System.Windows.Forms.Label txtBob;
     }
 }
 
