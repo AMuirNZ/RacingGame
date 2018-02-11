@@ -46,7 +46,7 @@
             this.PB2 = new System.Windows.Forms.PictureBox();
             this.PB1 = new System.Windows.Forms.PictureBox();
             this.pbBackground = new System.Windows.Forms.PictureBox();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnRace = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.numBetAmount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numThingNumber)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PB4)).BeginInit();
@@ -236,22 +236,22 @@
             this.pbBackground.TabIndex = 21;
             this.pbBackground.TabStop = false;
             // 
-            // button2
+            // btnRace
             // 
-            this.button2.Location = new System.Drawing.Point(574, 369);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 22;
-            this.button2.Text = "Race";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btnRace.Location = new System.Drawing.Point(574, 369);
+            this.btnRace.Name = "btnRace";
+            this.btnRace.Size = new System.Drawing.Size(75, 23);
+            this.btnRace.TabIndex = 22;
+            this.btnRace.Text = "Race";
+            this.btnRace.UseVisualStyleBackColor = true;
+            this.btnRace.Click += new System.EventHandler(this.btnRace_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(935, 404);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btnRace);
             this.Controls.Add(this.PB4);
             this.Controls.Add(this.PB3);
             this.Controls.Add(this.PB2);
@@ -304,7 +304,7 @@
         private System.Windows.Forms.PictureBox PB3;
         private System.Windows.Forms.PictureBox PB4;
         private System.Windows.Forms.PictureBox pbBackground;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnRace;
     }
 }
 

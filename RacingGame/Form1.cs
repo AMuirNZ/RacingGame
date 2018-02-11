@@ -13,8 +13,11 @@ namespace RacingGame
 {
     public partial class Form1 : Form
     {
+        //Punter class
         Punter[] myPunter = new Punter[3];
+        //Class containing Ghosts. Referred to in the code as things.
         Thing[] myThing = new Thing[4];
+        //Race information
         Race myRace = new Race();
 
         public Form1()
@@ -41,12 +44,14 @@ namespace RacingGame
 
 
             numThingNumber.Minimum = 1;
-
+            //assign variables to punters
             myRace.JoeCash = myPunter[0].cash;
             myRace.AlCash = myPunter[1].cash;
             myRace.BobCash = myPunter[2].cash;
         }
 
+
+        //Assign transparency to moving ghosts
         private void Transparent()
         {
 
@@ -82,7 +87,7 @@ namespace RacingGame
 
         private void allBetters_CheckedChanged(object sender, EventArgs e)
         {
-
+            
             myRace.myRadioButton = (RadioButton) sender;
             if (myRace.myRadioButton.Checked == true)
             {
@@ -116,7 +121,7 @@ namespace RacingGame
 
             if (person == 0)
             {
-                lblBetStatus1.Text = "Joe has put $" + numBetAmount.Text + " on thing " +
+                lblBetStatus1.Text = "Joe has put $" + numBetAmount.Text + " on " +
                                      myThing[numThingZeroStart].thingName;
                 myRace.JoeThing = myThing[numThingZeroStart].thingID;
                 myRace.JoeBet = true;
@@ -125,7 +130,7 @@ namespace RacingGame
             }
             else if (person == 1)
             {
-                lblBetStatus2.Text = "Al has put $" + numBetAmount.Text + " on thing " +
+                lblBetStatus2.Text = "Al has put $" + numBetAmount.Text + " on " +
                                      myThing[numThingZeroStart].thingName;
                 myRace.AlBet = true;
                 myRace.AlThing = myThing[numThingZeroStart].thingID;
@@ -134,7 +139,7 @@ namespace RacingGame
             }
             else
             {
-                lblBetStatus3.Text = "Bob has put $" + numBetAmount.Text + " on thing " +
+                lblBetStatus3.Text = "Bob has put $" + numBetAmount.Text + " on " +
                                      myThing[numThingZeroStart].thingName;
                 myRace.BobBet = true;
                 myRace.BobThing = myThing[numThingZeroStart].thingID;
@@ -144,15 +149,14 @@ namespace RacingGame
 
         }
 
-        private void Race_Click(object sender, EventArgs e)
-        {
+       
 
-        }
-
-        private void button2_Click(object sender, EventArgs e)
+        private void btnRace_Click(object sender, EventArgs e)
         {
+            //check that Joe, Al and Bob have made bets before racing
             if (myRace.JoeBet == true && myRace.AlBet == true && myRace.BobBet == true)
             {
+                //code for moving the ghosts
                 myRace.TrackLength = Form1.ActiveForm.Width - PB1.Width;
 
 
@@ -160,6 +164,7 @@ namespace RacingGame
                        PB3.Location.X < myRace.TrackLength && PB4.Location.X < myRace.TrackLength)
 
                 {
+                    
                     PB1.Location = new Point(PB1.Location.X + Factory.Number(), PB1.Location.Y);
                     PB2.Location = new Point(PB2.Location.X + Factory.Number(), PB2.Location.Y);
                     PB3.Location = new Point(PB3.Location.X + Factory.Number(), PB3.Location.Y);
@@ -168,6 +173,7 @@ namespace RacingGame
 
 
                     }
+                //decide what to do upon winning
                 if (PB1.Location.X >= myRace.TrackLength)
                 {
                     MessageBox.Show("The Winner is " + myThing[0].thingName);
@@ -240,13 +246,13 @@ namespace RacingGame
             }
             else
             {
-                MessageBox.Show("Nope");
+                MessageBox.Show("You cannot do that at this time.");
             }
         }
 
        
 
-
+        //Reset Ghosts to initial positions
         public void ResetGhosts()
         {
             PB1.Location = new Point(50, 50);
@@ -256,6 +262,7 @@ namespace RacingGame
 
         }
 
+        //reset evverything
         public void ResetAll()
         {
 
