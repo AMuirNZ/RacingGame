@@ -5,6 +5,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace RacingGame
+
+
 {
     static class Program
     {
@@ -17,6 +19,10 @@ namespace RacingGame
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
+
+
         }
+
+
     }
 }

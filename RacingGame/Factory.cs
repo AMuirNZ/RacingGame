@@ -15,8 +15,11 @@ namespace RacingGame
         private static int randomNumber;
 
 
+        
         public static Punter GetAPerson(int id)
         {
+
+            
             switch (id)
             {
                 case 0:
@@ -33,6 +36,7 @@ namespace RacingGame
 
         }
 
+        
         public static Thing GetAThing(int id)
         {
             switch (id)
@@ -52,7 +56,8 @@ namespace RacingGame
             return new Larry();
 
         }
-
+        
+        //Generates a random number to advance the ghosts 
         public static int Number()
         {
             return randomNumber = Random.Next(0, 10);

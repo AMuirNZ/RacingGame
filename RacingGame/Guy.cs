@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 
 namespace RacingGame
 {
+
+    //Simple stats on all three betters
     class Joe : Punter
     {
         public Joe()

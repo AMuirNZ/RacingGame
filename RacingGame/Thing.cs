@@ -16,6 +16,9 @@ namespace RacingGame
 
     class Larry : Thing
     {
+
+        //Stats on the four ghosts. 
+        // Ghosts were Originally named after the three stooges. Hence the names.  
         public Larry ()
         {
             thingName = "Inky";

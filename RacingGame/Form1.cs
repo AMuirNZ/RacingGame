@@ -176,6 +176,7 @@ namespace RacingGame
                 //decide what to do upon winning
                 if (PB1.Location.X >= myRace.TrackLength)
                 {
+                    //Place flag if winner is first ghost
                     MessageBox.Show("The Winner is " + myThing[0].thingName);
                     myRace.Winner = 1;
 
@@ -183,21 +184,25 @@ namespace RacingGame
                 }
                 else if (PB2.Location.X >= myRace.TrackLength)
                 {
+                    //Place flag if winner is second ghost
                     MessageBox.Show("The Winner is " + myThing[1].thingName);
                     myRace.Winner = 2;
 
                 }
                 else if (PB3.Location.X >= myRace.TrackLength)
                 {
+                    //Place flag if winner is third ghost
                     MessageBox.Show("The Winner is " + myThing[2].thingName);
                     myRace.Winner = 3;
                 }
                 else
                 {
+                    //Place flag if winner is fourth ghost
                     MessageBox.Show("The Winner is " + myThing[3].thingName);
                     myRace.Winner = 4;
                 }
 
+                //Whoever wins is awarded cash
                 if (myRace.JoeThing == myRace.Winner)
                 {
                     lblBetStatus1.Text = "Joe Wins $" + myRace.JoeAmount;
@@ -232,11 +237,14 @@ namespace RacingGame
                     myRace.BobCash = myRace.BobCash - myRace.BobAmount;
                 }
 
+                //
                 myPunter[0].cash = myRace.JoeCash;
                 myPunter[1].cash = myRace.AlCash;
                 myPunter[2].cash = myRace.BobCash;
                 ResetAll();
 
+
+                //If everyone is out of money
                 if (myRace.BobCash <= 0 && myRace.AlCash <= 0 && myRace.JoeCash <= 0)
                 {
                     MessageBox.Show("Everyone is broke. Go Home!");
@@ -262,7 +270,7 @@ namespace RacingGame
 
         }
 
-        //reset evverything
+        //reset everything
         public void ResetAll()
         {
 
