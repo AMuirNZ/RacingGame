@@ -23,7 +23,7 @@ namespace RacingGame
         public Al()
         {
             name = "Al";
-            cash = 35;
+            cash = 45;
 
         }
 
@@ -35,7 +35,7 @@ namespace RacingGame
         public Bob()
         {
             name = "Bob";
-            cash = 40;
+            cash = 45;
         }
     }
     
